@@ -1,2 +1,3 @@
 module Humans {
+	requires junit;
 }
