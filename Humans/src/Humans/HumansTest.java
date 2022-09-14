@@ -1,6 +1,8 @@
 package Humans;
 
 import java.time.LocalDate;
+//2021/10/02
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 import junit.framework.TestCase;

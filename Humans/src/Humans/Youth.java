@@ -1,20 +1,22 @@
 package Humans;
 
 public class Youth extends Human{
-
-	public Youth(int birthYear, int birthMonth, int birthDay, String firstName, String lastName, Gender gender, int i, String string) {
+int grade = 0;
+ String schoolName = "";
+	
+	public Youth(int birthYear, int birthMonth, int birthDay, String firstName, String lastName,
+			Gender gender, int grade, String schoolName) {
 		super(birthYear, birthMonth, birthDay, firstName, lastName, gender);
-		// TODO Auto-generated constructor stub
+		this.grade = grade;
+		this.schoolName = schoolName;
 	}
 
 	public Object getSchoolGrade() {
-		// TODO Auto-generated method stub
-		return null;
+		return grade;
 	}
 
 	public String getSchoolName() {
-		// TODO Auto-generated method stub
-		return null;
+		return schoolName;
 	}
 
 }

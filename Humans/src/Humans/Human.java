@@ -5,17 +5,16 @@ import java.time.Period;
 
 public class Human {
 	
-int birthYear;
-int birthMonth;
-int birthDay;
+private final int birthYear;
+private final int birthMonth;
+private final int birthDay;
 
 String firstName;
 String lastName;
 
 Gender gender;
 
-LocalDate now = LocalDate.now();
-LocalDate birthday = LocalDate.of(birthYear, birthMonth, birthDay);  
+
 
 	public Human(int birthYear, int birthMonth, int birthDay, String firstName, String lastName,
 			Gender gender) {
@@ -28,6 +27,8 @@ LocalDate birthday = LocalDate.of(birthYear, birthMonth, birthDay);
 		
 		this.gender = gender;
 	}
+	
+ 
 	
 	public int getBirthYear() {
 		return birthYear;
@@ -56,11 +57,12 @@ LocalDate birthday = LocalDate.of(birthYear, birthMonth, birthDay);
 	
 
 	
-	public int calculateCurrentAgeInYears() {		
-		Period period = Period.between(birthday, now);  
+	public int calculateCurrentAgeInYears() {
+		LocalDate now = LocalDate.now();
+		LocalDate birthday = LocalDate.of(this.birthYear, this.birthMonth, this.birthDay); 
+		int period = Period.between(birthday, now).getYears();  		
 		
-		
-		return 0;
+		return period;
 	}
 
 }
