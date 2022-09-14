@@ -2,9 +2,11 @@ package Humans;
 
 public class Introducer {
 
-	public char[] createPublicIntroduction(Human burns) {
-		// TODO Auto-generated method stub
-		return null;
+	public String createPublicIntroduction(Human person) {
+		String introduction = String.format("I am pleased to introduce %s %s.",person.getFirstName(), person.getLastName());
+		
+		
+		return introduction;
 	}
 
 }
