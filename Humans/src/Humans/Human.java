@@ -28,7 +28,19 @@ Gender gender;
 		this.gender = gender;
 	}
 	
- 
+	public String getGender() {
+		String pronoun = "";
+		if (gender == (gender.MALE)) {
+			pronoun = "He";
+		}
+		else if (gender == (gender.FEMALE)) {
+			pronoun = "She";
+		}
+		else {
+			pronoun = "They";
+		}
+		return pronoun;
+	}
 	
 	public int getBirthYear() {
 		return birthYear;

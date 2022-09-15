@@ -1,8 +1,12 @@
 package Humans;
 
 public enum Gender {
-	MALE,
-	FEMALE,
-	OTHER
+	MALE("He"),
+	FEMALE("She"),
+	OTHER("They");
+
+	Gender(String string) {
+		
+	}
 
 }
