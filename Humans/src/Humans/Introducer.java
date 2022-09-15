@@ -12,10 +12,15 @@ public class Introducer {
 		if(person instanceof Youth) {
 			introduction = introduction + String.format(" %s goes to %s and is in grade %d.",
 					(person).getGender(), ((Youth) person).getSchoolName(), ((Youth) person).getSchoolGrade());
-			if(person instanceof WilliamAberhartStudent) {
+			if(person instanceof WilliamAberhartStudent &&
+					((WilliamAberhartStudent) person).getHomeRoomTeacher() != null) {
+				
 				introduction = introduction + String.format(" %s belongs to %s's homeroom, which is in room %d.",
 						(person).getGender(), ((WilliamAberhartStudent) person).getHomeRoomTeacher(),
-						((WilliamAberhartStudent) person).getHomeRoom());
+						((WilliamAberhartStudent) person).getHomeRoom());								
+			}
+			if (( (WilliamAberhartStudent) person).getHomeRoomTeacher() == null) {
+				introduction = introduction + (" Their homeroom is unknown at this time.");
 			}
 		}
 		return introduction;
