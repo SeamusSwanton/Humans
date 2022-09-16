@@ -2,9 +2,13 @@ package Humans;
 
 import java.time.LocalDate;
 import java.time.Period;
+import java.util.Comparator;
 
 public class Human {
 	
+public static final Comparator<Human> AGE_ORDER = null;
+public static final Comparator<Human> ASSEMBLY_ORDER = null;
+public static final Comparator<Human> NAME_ORDER = null;
 private final int birthYear;
 private final int birthMonth;
 private final int birthDay;
@@ -76,5 +80,7 @@ Gender gender;
 		
 		return period;
 	}
+
+	
 
 }
