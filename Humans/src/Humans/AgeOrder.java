@@ -1,13 +1,17 @@
 package Humans;
 
-import java.util.Comparator;
-
-public class AgeOrder implements HumanInterface{
-public Comparator<Human> ageOrder = null;
+public class AgeOrder implements Comparable<Human>{
+static int age = 0;
 	
-	@Override
-	public Comparator<Human> compareTo(Object o) {
-		return ageOrder;
+	public int compareTo(Human human) {
+		
+		int compareQuantity = ((Human) human).calculateCurrentAgeInYears(); 
+		
+
+		this.age = compareQuantity - human.calculateCurrentAgeInYears();
+		return age;
+		
 	}
+	
 
 }

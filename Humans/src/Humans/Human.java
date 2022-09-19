@@ -6,9 +6,10 @@ import java.util.Comparator;
 
 public class Human {
 	
-public static final Comparator<Human> AGE_ORDER = null;
-public static final Comparator<Human> ASSEMBLY_ORDER = null;
-public static final Comparator<Human> NAME_ORDER = null;
+private static Comparator<Human> human;
+public static final Comparator<Human> AGE_ORDER = human;
+public static final Comparator<Human> ASSEMBLY_ORDER = human;
+public static final Comparator<Human> NAME_ORDER = human;
 private final int birthYear;
 private final int birthMonth;
 private final int birthDay;
