@@ -4,15 +4,16 @@ import java.time.LocalDate;
 import java.time.Period;
 import java.util.Comparator;
 
-public class Human {
+public class Human implements Comparable<Human> {
 	
-private static Comparator<Human> human;
-public static final Comparator<Human> AGE_ORDER = human;
-public static final Comparator<Human> ASSEMBLY_ORDER = human;
-public static final Comparator<Human> NAME_ORDER = human;
+
+public static final Comparator<Human> AGE_ORDER = new AgeOrder();
+public static final Comparator<Human> ASSEMBLY_ORDER = null;
+public static final Comparator<Human> NAME_ORDER = new NameOrder();
 private final int birthYear;
 private final int birthMonth;
 private final int birthDay;
+private int age;
 
 String firstName;
 String lastName;
@@ -56,7 +57,9 @@ Gender gender;
 	public int getBirthDay() {
 		return birthDay;
 	}
-
+	public int getAgeInYears() {
+		return age;
+	}
 
 	public String getFirstName() {
 		return firstName;
@@ -72,14 +75,29 @@ Gender gender;
 		this.lastName = lastName;		
 	}
 	
+	
 
 	
 	public int calculateCurrentAgeInYears() {
 		LocalDate now = LocalDate.now();
 		LocalDate birthday = LocalDate.of(this.birthYear, this.birthMonth, this.birthDay); 
-		int period = Period.between(birthday, now).getYears();  		
+		age = Period.between(birthday, now).getYears();  		
 		
-		return period;
+		return age;
+	}
+	public int calculateCurrentAgeInMonths() {
+		LocalDate now = LocalDate.now();
+		LocalDate birthday = LocalDate.of(this.birthYear, this.birthMonth, this.birthDay); 
+		return Period.between(birthday, now).getMonths();  		
+	}
+	public int calculateCurrentAgeInDays() {
+		LocalDate now = LocalDate.now();
+		LocalDate birthday = LocalDate.of(this.birthYear, this.birthMonth, this.birthDay); 
+		return Period.between(birthday, now).getMonths();  		
+	}
+	public int compareTo(Human o) {
+		
+		return 0;
 	}
 
 	
