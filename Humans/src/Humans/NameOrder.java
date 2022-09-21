@@ -6,7 +6,13 @@ public class NameOrder implements Comparator<Human> {
 
 	@Override
 	public int compare(Human o1, Human o2) {
-		return 0;
+		if(o1.getLastName().compareTo(o2.getLastName()) == 0) {
+			return o1.getFirstName().compareTo(o2.getFirstName());
+		}
+		else {
+			return  o1.getLastName().compareTo(o2.getLastName());
+		}
+		
 	}
 
 }
