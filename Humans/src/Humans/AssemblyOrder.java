@@ -24,7 +24,7 @@ public class AssemblyOrder implements Comparator<Human>  {
 
 	public int compare(Human o1, Human o2) {
 		Human[] names = {o1, o2};
-		Arrays.sort(names.length);
+		Arrays.sort(names.toString());
 		if (rankOfHuman(names[0]) > rankOfHuman(names[1])) {
 			return -1;
 		}
