@@ -6,6 +6,7 @@ import java.util.Comparator;
 
 public class AssemblyOrder implements Comparator<Human>  {
 
+	
 
 	private static int rankOfHuman(Human h) {
 		int x = 0;
@@ -23,16 +24,20 @@ public class AssemblyOrder implements Comparator<Human>  {
 	}
 
 	public int compare(Human o1, Human o2) {
-		Human[] names = {o1, o2};
-		Arrays.sort(names.toString());
-		if (rankOfHuman(names[0]) > rankOfHuman(names[1])) {
+		
+		if (rankOfHuman(o1) > rankOfHuman(o2)) {
 			return -1;
 		}
-		if (rankOfHuman(names[0]) < rankOfHuman(names[1])) {
+		if (rankOfHuman(o1) < rankOfHuman(o2)) {
 			return 1;
 		}
 		else {
-			return 0;
+			if(o1.getLastName().compareTo(o2.getLastName()) == 0) {
+				return o1.getFirstName().compareTo(o2.getFirstName());
+			}
+			else {
+				return  o1.getLastName().compareTo(o2.getLastName());
+			}
 		}
 	}
 
